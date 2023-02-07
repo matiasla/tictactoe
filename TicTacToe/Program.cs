@@ -60,7 +60,8 @@ namespace TicTacToe
             bool[] seleccionados1 = new bool[9];
             bool[] seleccionados2 = new bool[9];
             string partida = "";
-            
+            int turnos = 1;
+
             while (partida == "")
             {
 
@@ -135,19 +136,18 @@ namespace TicTacToe
                     }
                 }
 
-                if (partida == "terminada")
+                if (partida != "")
                 {
-                    Console.WriteLine("Felicitaciones! Ha ganado el jugador {0}", turno);
-                    Console.WriteLine("Presione cualquier tecla para reiniciar el juego");
-                    Console.ReadKey();
-                    Console.Clear();
-                    Cargar();
-                    Imprimir();
-                    Jugar();
-                }
-                else if (partida == "empate")
-                {
-                    Console.WriteLine("La partida ha terminado en empate!");
+                    if (partida == "terminada")
+                    {
+                        Console.WriteLine("Felicitaciones! Ha ganado el jugador {0}", turno);
+                        
+                    }
+                    else if (partida == "empate")
+                    {
+                        Console.WriteLine("La partida ha terminado en empate!");
+                    }
+
                     Console.WriteLine("Presione cualquier tecla para reiniciar el juego");
                     Console.ReadKey();
                     Console.Clear();
